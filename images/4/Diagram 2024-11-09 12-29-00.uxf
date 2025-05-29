@@ -1,0 +1,29 @@
+<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>161</x><y>49</y><w>1120</w><h>693</h></coordinates><panel_attributes>*server *
+fontsize=40
+halign=right
+bg=#18094a
+fg=white</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>217</x><y>147</y><w>280</w><h>196</h></coordinates><panel_attributes>Container mysqlserver
+fontsize=30
+bg=#24edea
+Not port exposed
+
+MySQL:8.0 running</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>833</x><y>147</y><w>280</w><h>196</h></coordinates><panel_attributes>Container microitem
+fontsize=30
+bg=#24edea
+Port 8083 exposed
+
+Microservice Item running</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>490</x><y>217</y><w>357</w><h>35</h></coordinates><panel_attributes>lt=&lt;&lt;.
+fg=white
+get data from
+fontsize=20
+lw=3</panel_attributes><additional_attributes>10;30;490;30</additional_attributes></element><element><id>UMLClass</id><coordinates><x>840</x><y>448</y><w>280</w><h>196</h></coordinates><panel_attributes>Container angularapp
+fontsize=30
+bg=#24edea
+Port 80 exposed
+
+NGINX Running</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>980</x><y>336</y><w>112</w><h>126</h></coordinates><panel_attributes>lt=&lt;&lt;.
+fg=white
+get data from
+fontsize=20
+lw=3</panel_attributes><additional_attributes>10;10;10;160</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>917</x><y>805</y><w>133</w><h>63</h></coordinates><panel_attributes>*Client*
+fontsize=30</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>973</x><y>637</y><w>21</w><h>182</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;240</additional_attributes></element></diagram>
