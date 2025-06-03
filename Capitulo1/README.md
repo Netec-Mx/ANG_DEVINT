@@ -4,7 +4,7 @@ En esta práctica se espera que el alumno pueda implementar una aplicación de "
 
 
 ## Objetivos de la práctica:
-- Construir  proyecto de Angular.
+- Construir un proyecto de Angular.
 - Crear componentes.
 - Crear servicios.
 - Iniciar proyecto de Angular.
