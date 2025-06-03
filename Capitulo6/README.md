@@ -1,11 +1,14 @@
-# 6. Pruebas de código usando Jasmine y Karma
+# Práctica 6. Pruebas de código usando Jasmine y Karma
 El alumno aprenderá a realizar pruebas de código para validar el funcionamiento de un componente en Angular.
 
-## Objetivos
-- Definir validaciones en formularios
-- Crear pruebas de código usando jasmine y karma
-- Ejecutar las pruebas de código
+## Objetivos de la práctica:
+- Definir validaciones en formularios.
+- Crear pruebas de código usando Jasmine y Karma.
+- Ejecutar las pruebas de código.
 
+## Duración aproximada:
+- 60 minutos.
+  
 ---
 
 <div style="width: 400px;">
@@ -30,14 +33,13 @@ El alumno aprenderá a realizar pruebas de código para validar el funcionamient
 
 
 ## Diagrama
-Al final del laboratorio se espera que el alumno pueda observar la ejecución de las pruebas unitarias de la aplicación de Angular.
+Al final de la práctica se espera que el alumno pueda observar la ejecución de las pruebas unitarias de la aplicación de Angular.
 
 ![alt text](../images/6/diagrama.png)
 
 ## Instrucciones
-1. Abrir una terminal en el escritorio.
-
-2. Ejecutar el siguiente comando para la creación de un nuevo proyecto en angular:
+1. Abre una terminal en el escritorio.
+2. Ejecuta el siguiente comando para la creación de un nuevo proyecto en Angular:
 
 ```bash
 ng new apptesting
@@ -46,15 +48,15 @@ ng new apptesting
 - **Stylesheet:** CSS
 - **Server Side Rendering:** No
 
-3. Abrir el  proyecto en **Visual Studio Code** 
+3. Abre el  proyecto en **Visual Studio Code**. 
 
-4. Abrir una terminal en **Visual Studio Code** y crear un nuevo componente con el siguiente comando:
+4. Abre una terminal en **Visual Studio Code** y crea un nuevo componente con el siguiente comando:
 
 ```bash
 ng generate component components/robust-form
 ```
 
-5. Ahora modificaremos las **rutas** de angular:
+5. Modifica las **rutas** de Angular:
 
 ```typescript
 import { Routes } from '@angular/router';
@@ -65,7 +67,7 @@ export const routes: Routes = [
 ];
 ```
 
-6. Modificar el código del componente principal:
+6. Modifica el código del componente principal:
 
 **app.component.ts**
 ```typescript
@@ -94,7 +96,7 @@ export class AppComponent {
 <router-outlet></router-outlet>
 ```
 
-7. Modificar el código del componente **robust-form**
+7. Modifica el código del componente **robust-form**:
 
 **robust-form.component.ts**
 ```typescript
@@ -251,7 +253,7 @@ describe('RobustFormComponent', () => {
 
 ```
 
-8. Ejecutar el proyecto con el siguiente comando: 
+8. Ejecuta el proyecto con el siguiente comando: 
 
 ```bash
 ng serve
@@ -265,9 +267,9 @@ ng serve
 
 ![alt text](../images/6/2.png)
 
-11. Detener la aplicación **(cerrar terminal donde se ejecuta la aplicación)**
+11. Deten la aplicación **(cerrar terminal donde se ejecuta la aplicación)**.
 
-12. Ejecutar las pruebas con el siguiente comando:
+12. Ejecuta las pruebas con el siguiente comando:
 
 ```bash
 ng test
@@ -277,7 +279,7 @@ ng test
 
 
 
-## Resultado Esperado [Instrucciones](#instrucciones)
+## Resultado esperado [Instrucciones](#instrucciones)
 
 Al ejecutar las pruebas nos abrirá una pagina de un navegador web donde nos indicará cuantas pruebas fuerón correctas. 
 
