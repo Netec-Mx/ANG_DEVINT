@@ -1,14 +1,5 @@
+# Angular Developer
 
-    <td>
-    <td>
-      <h1>Angular Developer<h1>
-    </td>
-  </tr>
-  </tbody>
-<table>
-</div>
-
-**Plataforma de Laboratorios**
 Bienvenido a la **Plataforma de Laboratorios** del curso **Angular Developer**. Aquí podrás explorar diferentes tecnologías a través de prácticas guiadas. ¡Desarrolla tus habilidades y lleva tus conocimientos al siguiente nivel!
 
 # Lista de Laboratorios
@@ -19,27 +10,27 @@ Cada uno de estos laboratorios está diseñado para ofrecerte una experiencia pr
     - ⏱️ **Duración estimada**: 45 min
 
 02. ### [Aplicación "Dog Library"](./Capitulo2/README.md)
-    - **Descripción**: Usando formularios reactivos, uso de signals crear una aplicación que consuma un api de perros. 
+    - **Descripción**: Usando formularios reactivos, uso de signals crear una aplicación que consuma un API de perros. 
     - ⏱️ **Duración estimada**: 60 min
 
 03. ### [Aplicación "ShoppingCart Angular"](./Capitulo3/README.md)
-    - **Descripción**: Se espera que el alumno pueda crear una aplicación que nos permita conectarnos a una api de Spring para obtener los articulos y el manejo del estado del carrito de compras usando **ngrx**. 
+    - **Descripción**: Se espera que el alumno pueda crear una aplicación que nos permita conectarnos a una API de Spring para obtener los artículos y el manejo del estado del carrito de compras usando **ngrx**. 
     - ⏱️**Duración estimada**: 90 min
 
 04. ### [Despliegue de aplicación "ShoppingCart Angular en Docker"](./Capitulo4/README.md)
-    - **Descripción**: Usando Docker y **Docker Compose** desplegaremos nuestra aplicación de angular.
+    - **Descripción**: Usando Docker y **Docker Compose** desplegaremos nuestra aplicación de Angular.
     - ⏱️**Duración estimada**: 60 min
+      
 05. ### [Autenticación de usuarios  usando JWT (Keycloak)](./Capitulo5/README.md)
-    - **Descripción**: Crear una aplicación de angular que solicite las credenciales del usuario para algunas funciones de angular.
+    - **Descripción**: Crear una aplicación de Angular que solicite las credenciales del usuario para algunas funciones de Angular.
     - ⏱️**Duración estimada**: 60 min
-
 
 06. ### [Pruebas de código usando Jasmine y Karma](./Capitulo6/README.md)
-    - **Descripción**: Usando validación de código y pruebas con jasmine y karma realizar code testing. 
+    - **Descripción**: Usando validación de código y pruebas con Jasmine y Karma realizar code testing. 
     - ⏱️**Duración estimada**: 60 min
 
 07. ### [Depuración de aplicación de Angular usando Visual Studio Code](./Capitulo7/README.md)
-    - **Descripción**: Usando visual studio code depurar una aplicación de angular y validar su funcionamiento observado el flujo de ejecución. 
+    - **Descripción**: Usando Visual Studio Code depurar una aplicación de Angular y validar su funcionamiento observado el flujo de ejecución. 
     - ⏱️**Duración estimada**: 30 min
 
 - ### [Proyecto final](./Capitulo8/README.md)
