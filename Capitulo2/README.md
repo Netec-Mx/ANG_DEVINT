@@ -1,11 +1,14 @@
-# 2. Aplicación "Dog Library"
-En este laboratorio usando los conceptos de las últimas versiones de angular se implementa una aplicación de administración de perros
+# Práctica 2. Aplicación "Dog Library"
+En esta práctica, usando los conceptos de las últimas versiones de Angular, se implementa una aplicación de administración de perros.
 
 
-## Objetivos
-- Usar formularios reactivos
-- Injectar servicios usando el método **inject()**
-- Diseñar la interface usando **Angular Material**
+## Objetivos de la práctica:
+- Usar formularios reactivos.
+- Injectar servicios usando el método **inject()**.
+- Diseñar la interface usando **Angular Material**.
+
+## Duración aproximada:
+- 60 minutos.
 
 ---
 <div style="width: 400px;">
@@ -30,7 +33,7 @@ En este laboratorio usando los conceptos de las últimas versiones de angular se
 ---
 
 ## Diagrama
-### Al final se espera que el alumno tenga una aplicación similar a la siguiente
+### Al finalizar la práctica, se espera que el alumno tenga una aplicación similar a la siguiente:
 
 ![alt text](../images/2/inicial.png)
 
@@ -38,18 +41,18 @@ En este laboratorio usando los conceptos de las últimas versiones de angular se
 
 
 ## Instrucciones
-Este laboratorio esta separado en las siguientes secciónes: 
+Esta práctica se encuentra dividida en las siguientes secciones: 
 
 - **[Docker Compose Api Dogs]()**
 - **[Aplicación en Angular]()**
 
 ## Docker compose API Dogs [return](#instrucciones)
 
-> **IMPORTANTE:** Para implementar esta sección se debe de tener instalado **docker** en tu computadora.
+> **IMPORTANTE:** Para implementar esta sección se debe de tener instalado **Docker** en tu computadora.
 
-1. Crear una carpeta en el escritorio que llamadores **DogAPI**
-2. Dentro de la carpeta **DogAPI** crearemos un archivo llamado **docker-compose.yaml**
-3. En el archivo **docker-compose.yaml** añadiremos el siguiente contenido: 
+1. Crea una carpeta en el escritorio a la que llamadores **DogAPI**.
+2. Dentro de la carpeta **DogAPI** genera un archivo llamado **docker-compose.yaml**.
+3. En el archivo **docker-compose.yaml** añade el siguiente contenido: 
 
 ```yaml
 services:
@@ -79,18 +82,18 @@ services:
 
 ```
 
-4. Abrir una terminal de windows dentro de la carpeta **DogAPI** y ejecuta el siguiente comando: 
+4. Abre una terminal de Windows dentro de la carpeta **DogAPI** y ejecuta el siguiente comando: 
 
 ```bash
 docker-compose up -d
 ```
 
-> **NOTA:** El comando tardará un poco en iniciar, y este comando inicia un microservicio en el puerto 8082
+> **NOTA:** El comando tardará un poco en iniciar. Este comando pone en marcha un microservicio en el puerto 8082.
 
 ![alt text](../images/2/1.png)
 
 
-5. Abrir **INSOMNIA ó POSTMAN**  para probar el api. Inserte 2 Perros y obtengalos con el siguiente comando:
+5. Abre **INSOMNIA ó POSTMAN**  para probar el api. Inserta 2 Perros y obtenlos con el siguiente comando:
 
 - **POST**: Insertar perro
 ```bash
@@ -115,7 +118,7 @@ curl --request GET \
 
 ## Aplicación en Angular [return](#instrucciones)
 
-1. Abrir una terminal en el Escritorio y ejecutar el siguiente comando:
+1. Abre una terminal en el escritorio y ejecuta el siguiente comando:
 
 ```bash
 ng new dogs-library
@@ -124,11 +127,11 @@ ng new dogs-library
 - **Server Side Rendering:** No
 
 
-2. Abrir la aplicación en **Visual Studio Code**
+2. Abre la aplicación en **Visual Studio Code**.
 
-3. En la carpeta **src->app** crear una carpeta que llamaremos **entities**
+3. En la carpeta **src->app** crea una carpeta con el nombre de **entities**.
 
-4. Dentro de la carpeta **entities** crear un archivo que llamaremos **business.ts** y añadir el siguiente contenido: 
+4. Dentro de la carpeta **entities** genera un archivo al cual nombraremos como **business.ts**; y añade el siguiente contenido: 
 
 ```typescript
 export interface Dog{
@@ -139,9 +142,9 @@ export interface Dog{
 }
 ```
 
-5. Abrir una terminal en **Visual Studio Code**
+5. Abre una terminal en **Visual Studio Code**.
 
-6. Crear un **servicio** usando el siguiente comando: 
+6. Crea un **servicio** usando el siguiente comando: 
 
 ```bash
 ng generate service services/dog --skip-tests
@@ -211,20 +214,19 @@ export const appConfig: ApplicationConfig = {
 };
 ```
 
-8. Usando la terminal añadir **Angular Material** usando el siguiente comando:
+8. Utilizando la terminal, añade **Angular Material** usando el siguiente comando:
 
 ```bash
 ng add @angular/material@19.2.16
 ```
 Le realizará las siguientes preguntas:
 
-- **Confirmación de instalación:** yes
-- **Tema a utilizar:** Cyan/Orange (aunque puedes elegir el que más te guste)
+- **Confirmación de instalación:** Yes.
+- **Tema a utilizar:** Cyan/Orange (aunque puedes elegir el que más te guste).
+- **Set up global Angular Material typography styles?**: Yes.
 
-- **Set up global Angular Material typography styles?**: Y
 
-
-9. Crear 3 componentes con los siguientes comandos:
+9. Crea 3 componentes con los siguientes comandos:
 
 ```bash
 ng generate component components/home --skip-tests
@@ -238,7 +240,7 @@ ng generate component components/dog-form --skip-tests
 ng generate component components/dog-table --skip-tests
 ```
 
-10. Configurar el archivo de **rutas** **app.routes.ts** añadir las siguientes rutas: 
+10. Configura el archivo de **rutas** **app.routes.ts** y añade las siguientes rutas: 
 
 ```typescript
 import { Routes } from '@angular/router';
@@ -253,7 +255,7 @@ export const routes: Routes = [
 ];
 ```
 
-11. Configurar el componente principal **app.component.ts** importar **MatToolBarModule, RouterLink, RouterOutlet** debería quedar de la siguiente manera: 
+11. Configura el componente principal **app.component.ts**. Importa **MatToolBarModule, RouterLink, RouterOutlet**, debería quedar de la siguiente manera: 
 
 ```typescript
 import { Component } from '@angular/core';
@@ -273,7 +275,7 @@ export class AppComponent {
 }
 ```
 
-12. Ahora modificar el **app.component.html** con el siguiente contenido: 
+12. Ahora, modifica el **app.component.html** con el siguiente contenido: 
 
 ```html
 <mat-toolbar>
@@ -288,7 +290,7 @@ export class AppComponent {
 
 ```
 
-13. Ahora añadir el siguiente **app.component.css** para darle estilo a nuestros componentes: 
+13. Añade el siguiente **app.component.css** para darle estilo a nuestros componentes: 
 
 ```css
 .title{
@@ -310,7 +312,8 @@ export class AppComponent {
 ```
 
 
-14. Configurando el componente **Home** primero el **home.component.ts** añadiremos las siguientes importaciones: 
+14. Configurando el componente **Home**.
+    Primero, añade las siguientes importaciones en el **home.component.ts**: 
 
 ```typescript
 import { Component, inject } from '@angular/core';
@@ -330,7 +333,7 @@ export class HomeComponent {
 }
 ```
 
-15. Añadiremos en el **html** del componente **Home** (archivo **home.component.html**) el siguiente contenido: 
+15. Añade en el **html** del componente **Home** (archivo **home.component.html**) el siguiente contenido: 
 
 ```html
 <mat-card class="fullscreen-card">
@@ -366,7 +369,7 @@ export class HomeComponent {
 
 </mat-card>
 ```
-16. Añadiremos en el **css** del componente **Home** los estilos que usaremos (archivo **home.component.css**).
+16. Añade en el **css** del componente **Home** los estilos que usaremos (archivo **home.component.css**).
 
 ```css
 .cardtitle{
@@ -397,7 +400,7 @@ export class HomeComponent {
 }
 ```
 
-17. Ahora se modificará el contenido del componente **dog-table** añadiremos el siguiente código en el **dog-table.component.ts**
+17. Ahora se modificará el contenido del componente **dog-table**. Añade el siguiente código en el **dog-table.component.ts**.
 
 ```typescript
 import { Component, inject, signal } from '@angular/core';
@@ -440,7 +443,7 @@ export class DogTableComponent {
 }
 ```
 
-18. Ahora se modifica el **Html** del componente **dog-table**
+18. Ahora, se modifica el **Html** del componente **dog-table**.
 
 ```html
 <mat-card class="fullscreen-card">
@@ -484,7 +487,7 @@ export class DogTableComponent {
 </mat-card>
 ```
 
-19. Ahora se modifica el **CSS** del component **dog-table** con el siguiente contenido: 
+19. Se modifica el **CSS** del component **dog-table** con el siguiente contenido: 
 
 ```css
 .cardtitle{
@@ -535,7 +538,7 @@ img {
 }
 ```
 
-20. Ahora modificaremos el **typescript** del componente **dog-form** añadiendo el siguiente contenido: 
+20. Modifica el **typescript** del componente **dog-form** añadiendo el siguiente contenido: 
 
 ```typescript
 import { Component, inject } from '@angular/core';
@@ -609,7 +612,7 @@ submit(){
 }
 ```
 
-21. Modificar el **html** del componente **dog-form** usando el siguiente contenido: 
+21. Modifica el **html** del componente **dog-form** usando el siguiente contenido: 
 
 ```html
 
@@ -641,7 +644,7 @@ submit(){
 </mat-card>
 ```
 
-22. Modificar el **CSS** del componente **dog-form** con el siguiente contenido: 
+22. Modifica el **CSS** del componente **dog-form** con el siguiente contenido: 
 
 ```css
 .full-width {
@@ -655,7 +658,7 @@ mat-card {
 }
 ```
 
-23. Iniciar la aplicación con el siguiente comando: 
+23. Inicia la aplicación con el siguiente comando: 
 
 ```bash
 ng serve --port=500
