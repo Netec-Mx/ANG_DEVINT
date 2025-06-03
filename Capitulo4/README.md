@@ -1,15 +1,16 @@
-# 4. Despliegue de aplicación "ShoppingCart Angular en Docker"
+# Práctica 4. Despliegue de aplicación "ShoppingCart Angular en Docker"
 
 Usando la tecnología de contenedores desplegaremos nuestra aplicación de Angular.
 
-## Objetivos
+## Objetivos de la práctica:
 - Modificar código de angular para contenedores
 - Configurar **Dockerfile** para la creación de la imagén de angular
-
 - Crear configuración de **NGINX**  para enrutar la aplicación de Angular. 
-
 - Desplegar aplicación usando **Docker Compose**
 
+## Duración aproximada:
+- 90 minutos.
+  
 ---
 
 <div style="width: 400px;">
@@ -37,9 +38,9 @@ Usando la tecnología de contenedores desplegaremos nuestra aplicación de Angul
 ![diagrama](../images/4/diagrama.png)
 
 ## Instrucciones
-> **IMPORTANTE:** Para este laboratorio es importante tener la aplicación del **Lab3** y en la máquina tener **Docker** instalado. 
+> **IMPORTANTE:** Para esta práctica es importante tener la aplicación del **Lab3** y en la máquina tener **Docker** instalado. 
 
-Este laboratorio esta dividido en las siguientes secciones: 
+Esta práctica se encuentra dividida en las siguientes secciones: 
 
 - **[Configuración App Angular](#configuración-app-angular-return)**
 - **[Construir imagen de App Angular](#construir-imagen-de-app-angular-return)**
@@ -50,21 +51,21 @@ Este laboratorio esta dividido en las siguientes secciones:
 
 > **IMPORTANTE:** Para prepara la aplicación de **shop** de angular necesitamos tener en cuenta que la app se conecta a un **microservicio** en Spring que al desarrollar se encuentra localmente, pero para lograr que funcione en contenedores debemos de cambiar la ruta de conexión. 
 
-1. Abrimos la aplicación de **shop** en **Visual Studio Code** 
+1. Abre la aplicación de **shop** en **Visual Studio Code**. 
 
-2. Nos vamos a los servicios de la aplicación y abrimos el servicio **item.service.ts**
+2. Nos vamos a los servicios de la aplicación y abrimos el servicio **item.service.ts**.
 
 ![alt text](../images/4/1.png)
 
-> **NOTA:** si observamos el atributo **baseUrl** esta para un microservicio que se ejecuta en **localhost** pero en un sistema en producción esto no es así. 
+> **NOTA:** Si observamos el atributo **baseUrl**, esta para un microservicio que se ejecuta en **localhost** pero en un sistema en producción esto no es así. 
 
-3. Modificar el atributo **baseUrl** para que podamos usar un proxy para redirigir el tráfico. 
+3. Modifica el atributo **baseUrl** para que podamos usar un proxy para redirigir el tráfico. 
 
 ```typescript
 private baseUrl:string="/api/item";
 ```
 
-> **IMPORTANTE:** Si observamos cambiamos la ruta de localhost a una ruta relativa, esto nos servirá para que através del servidor nginx pueda redirigir el tráfico al microservicio item. 
+> **IMPORTANTE:** Si observamos, cambiamos la ruta de localhost a una ruta relativa, esto nos servirá para que através del servidor nginx pueda redirigirse el tráfico al microservicio item. 
 
 4. Guardamos todo y nuestra aplicación ya esta lista.
 
@@ -74,12 +75,11 @@ private baseUrl:string="/api/item";
 1. Para crear la imagen de **Docker** para nuestra aplicación crearemos los siguientes archivos en la raíz del proyecto **shop**: 
 
 - **Dockerfile**: Es un archivo donde se indican las instrucciones del cómo se construira la imagen. 
-
 - **.dockerignore**: En este archivo se declarán los archivos que no se agregarán en la imagen, es fundamental para hacer más ligera nuestra imagen. 
 
 ![alt text](../images/4/2.png)
 
-2. Contenido archivo **.dockerignore** 
+2. Contenido del archivo **.dockerignore** 
 
 ```text
 node_modules
@@ -92,9 +92,9 @@ Dockerfile
 README.md
 ```
 
-> **NOTA:** Se indican que archivos no se usarán para crear la imagen de docker.
+> **NOTA:** Se indican que archivos no se usarán para crear la imagen de Docker.
 
-3. Contenido archivo **Dockerfile**:
+3. Contenido del archivo **Dockerfile**:
 
 ```Dockerfile
 # Compilar angular
@@ -112,21 +112,21 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-> **NOTA:** En este archivo se define que primero se construira la aplicación y después se usará nginx para desplegar nuestra aplicación de angular. 
+> **NOTA:** En este archivo se define que primero se construirá la aplicación y después se usará nginx para desplegar nuestra aplicación de Angular. 
 
-4. Ahora abrir una terminal y posicionarse en la ubicación del proyecto **shop** donde se encuentran el archivo **Dockerfile**
+4. Abre una terminal y posicionate en la ubicación del proyecto **shop** donde se encuentran el archivo **Dockerfile**.
 
-5. Ejecutar el siguiente comando:
+5. Ejecuta el siguiente comando:
 
 ```bash
 docker build -t angular:v1 .
 ```
 
-> **NOTA:** La primera vez que ejecutes este comando tardará algunos minutos porque tiene que construir la aplicación de angular para pasarla a nginx. 
+> **NOTA:** La primera vez que ejecutes este comando tardará algunos minutos porque tiene que construir la aplicación de Angular para pasarla a nginx. 
 
 ![alt text](../images/4/3.png)
 
-6. Validar con el siguiente comando si se creo la imagen de docker: 
+6. Valida con el siguiente comando si se creo la imagen de Docker: 
 
 ```bash
 docker image ls
@@ -137,15 +137,15 @@ docker image ls
 
 ## Crear y configurar docker-compose y nginx [return](#instrucciones)
 
-1. En el escritorio crearemos una nueva carpeta que llamaremos **composeAngular**
+1. En el escritorio, crea una nueva carpeta con el nombre de **composeAngular**.
 
-2. En la carpeta **composeAngular** crearemos los siguientes archivo:
+2. En la carpeta **composeAngular** genera los siguientes archivo:
 
 - **docker-compose.yaml**
 - **nginx.conf**
 
 
-3. En el archivo **docker-compose.yaml** agregaremos el siguiente contenido:
+3. En el archivo **docker-compose.yaml** agrega el siguiente contenido:
 
 ```yaml
 services:
@@ -188,7 +188,7 @@ services:
       - 8081:80
 ```
 
-4. En el archivo **nginx.conf** agregaremos el siguiente contenido: 
+4. En el archivo **nginx.conf** agrega el siguiente contenido: 
 
 ```nginx
 server {
@@ -211,7 +211,7 @@ server {
 
 ## Desplegar aplicación [return](#instrucciones)
 
-1. Abrir una terminal en la carpeta **composeAngular** y ejecutar el siguiente comando: 
+1. Abre una terminal en la carpeta **composeAngular** y ejecuta el siguiente comando: 
 
 ```bash
 docker-compose up -d
@@ -222,8 +222,8 @@ docker-compose up -d
 ![alt text](../images/4/5.png)
 
 
-## Resultado Esperado 
+## Resultado esperado 
 
-Si se ha llegado hasta aquí se debe de abrir un nuevo explorador web y abrir la ruta: http://localhost:8081 te debería de abrir tu aplicación de angular desplegada en docker. 
+Si se ha llegado hasta aquí se debe de abrir un nuevo explorador web y abrir la ruta: http://localhost:8081, te debería de abrir tu aplicación de Angular desplegada en Docker. 
 
 ![alt text](../images/4/6.png)
