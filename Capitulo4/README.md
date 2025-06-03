@@ -59,7 +59,7 @@ Esta práctica se encuentra dividida en las siguientes secciones:
 
 > **NOTA:** Si observamos el atributo **baseUrl**, esta para un microservicio que se ejecuta en **localhost** pero en un sistema en producción esto no es así. 
 
-3. Modifica el atributo **baseUrl** para que podamos usar un proxy para redirigir el tráfico. 
+ 3. Modifica el atributo **baseUrl** para que podamos usar un proxy para redirigir el tráfico. 
 
 ```typescript
 private baseUrl:string="/api/item";
@@ -67,12 +67,12 @@ private baseUrl:string="/api/item";
 
 > **IMPORTANTE:** Si observamos, cambiamos la ruta de localhost a una ruta relativa, esto nos servirá para que através del servidor nginx pueda redirigirse el tráfico al microservicio item. 
 
-4. Guardamos todo y nuestra aplicación ya esta lista.
+ 4. Guardamos todo y nuestra aplicación ya esta lista.
 
 
 ## Construir imagen de App Angular [return](#instrucciones)
 
-1. Para crear la imagen de **Docker** para nuestra aplicación crearemos los siguientes archivos en la raíz del proyecto **shop**: 
+ 1. Para crear la imagen de **Docker** para nuestra aplicación crearemos los siguientes archivos en la raíz del proyecto **shop**: 
 
 - **Dockerfile**: Es un archivo donde se indican las instrucciones del cómo se construira la imagen. 
 - **.dockerignore**: En este archivo se declarán los archivos que no se agregarán en la imagen, es fundamental para hacer más ligera nuestra imagen. 
