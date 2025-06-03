@@ -1,13 +1,13 @@
-# 1. Aplicación "Administrador de tareas en Angular"
+# Práctica 1. Aplicación "Administrador de tareas en Angular"
 
-En este laboratorio se espera que el alumno pueda implementar una aplicación de "Gestión de tareas" en angular usando los conceptos básicos de este Framework. 
+En esta práctica se espera que el alumno pueda implementar una aplicación de "Gestión de tareas" en Angular usando los conceptos básicos de este Framework. 
 
 
-## Objetivos
-- Construir  proyecto de angular
-- Crear componentes
-- Crear servicios
-- Iniciar proyecto de angular.
+## Objetivos de la práctica:
+- Construir  proyecto de Angular.
+- Crear componentes.
+- Crear servicios.
+- Iniciar proyecto de Angular.
 
 ---
 <!--Este fragmento es la barra de 
@@ -34,15 +34,15 @@ navegación-->
 ---
 
 ## Aplicación 
-Se espera que el alumno implemente la siguiente aplicación
+Se espera que el alumno implemente la siguiente aplicación:
 
 ![alt text](../images/1/diagrama.png)
 
 
 
 ## Instrucciones 
-1. Abrir una nueva terminal de windows
-2. Navegar al escritorio de nuestra máquina y ejecutar el siguiente comando. 
+1. Abre una nueva terminal de Windows.
+2. Navega al escritorio de nuestra máquina y ejecuta el siguiente comando. 
 - **stylesheet:** CSS
 - **Server-Side Rendering (SSR):** No
 
@@ -52,11 +52,11 @@ ng new taskmanager
 
 ![alt text](../images/1/1.png)
 
-3. Abrir el proyecto en **Visual Studio Code**
+3. Abre el proyecto en **Visual Studio Code.**
 
 ![alt text](../images/1/2.png)
 
-4. Abrir en **VSCode** una terminal y crear 2 componentes con los siguientes comandos:
+4. Abre en **VSCode** una terminal y crea 2 componentes con los siguientes comandos:
 
 ```bash
 ng generate component components/form-task --skip-tests
@@ -68,12 +68,12 @@ ng generate component components/table-task --skip-tests
 
 > **NOTA:** Los comandos anteriores crearán 2 componentes. 
 
-5. Crear un servicio con el siguiente comando: 
+5. Crea un servicio con el siguiente comando: 
 
 ```bash
 ng generate service services/Task --skip-tests
 ```
-6. En el archivo **index.html** agregaremo bootstrap, puedes navegar la siguiente ruta (https://getbootstrap.com/) en este caso particular agregaremos bootstrap por CDN. Nuestro **index.html** quedará de la siguiente forma: 
+6. En el archivo **index.html** agregaremos bootstrap. Puedes navegar en la siguiente ruta (https://getbootstrap.com/), en este caso en particular agregaremos bootstrap por CDN. Nuestro **index.html** quedará de la siguiente forma: 
 
 ```html
 <!doctype html>
@@ -97,15 +97,15 @@ ng generate service services/Task --skip-tests
 </html>
 ```
 
-8. Crearemos una carpeta en **app** que llamaremos **entities**
+8. Crea una carpeta en **app**, a la cual llamaremos **entities**.
 
 ![alt text](../images/1/3.png)
 
-9. Dentro de la carpeta **entities** crearemos un archivo llamado **business.ts**  
+9. Dentro de la carpeta **entities** crea un archivo llamado **business.ts**.  
 
 ![alt text](../images/1/4.png)
 
-10. En el archivo **business.ts** añadiremos el siguiente código:
+10. En el archivo **business.ts** añade el siguiente código:
 
 ```typescript
 export enum Priority{
@@ -123,7 +123,7 @@ export interface TaskUser{
 
 
 
-11. En el archivo **app->services->task.service.ts** modificaremos su código con lo siguiente:
+11. En el archivo **app->services->task.service.ts**, modifica su código con lo siguiente:
 
 ```typescript
 import { Injectable } from '@angular/core';
@@ -161,7 +161,7 @@ export class TaskService {
 }
 ```
 
-12. En el **html** del componente llamado **form-task.component.html** añadir el siguiente código:
+12. En el **html** del componente llamado **form-task.component.html** añade el siguiente código:
 
 ```html
 <div class="container-fluid" >
@@ -201,7 +201,7 @@ export class TaskService {
 </div>
 ```
 
-13. En el archivo **form-task.component.ts** añadir el siguiente código: 
+13. En el archivo **form-task.component.ts** añade el siguiente código: 
 
 ```typescript
 import { Component } from '@angular/core';
@@ -256,7 +256,7 @@ priorityEnum= Priority;
 }
 ```
 
-14. En el componente **table-task.component.html** añadir el siguiente código:
+14. En el componente **table-task.component.html** añade el siguiente código:
 
 ```html
 <div class="container-fluid">
@@ -290,7 +290,7 @@ priorityEnum= Priority;
 </div>
 ```
 
-15. En el archivo **table-task.component.ts** añadir el siguiente código: 
+15. En el archivo **table-task.component.ts** añade el siguiente código: 
 
 ```typescript
 import { Component } from '@angular/core';
@@ -317,7 +317,7 @@ export class TableTaskComponent {
 
 ```
 
-16. En el componente principal **app.component.html** añadir el siguiente código:
+16. En el componente principal **app.component.html** añade el siguiente código:
 
 ```html
 <nav class="navbar bg-primary">
@@ -351,7 +351,7 @@ Si se ha llegado hasta este punto se debe de iniciar la aplicación con el sigui
 ng serve
 ```
 
-- Abrir el siguiente url: http://localhost:4200/
+- Abrir el siguiente URL: http://localhost:4200/
 
 ![alt text](../images/1/6.png)
 
