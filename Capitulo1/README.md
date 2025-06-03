@@ -41,7 +41,7 @@ Se espera que el alumno implemente la siguiente aplicación:
 
 
 ## Instrucciones 
-1. Abre una nueva terminal de Windows.
+Paso 1. Abre una nueva terminal de Windows.
 2. Navega al escritorio de nuestra máquina y ejecuta el siguiente comando. 
 - **stylesheet:** CSS
 - **Server-Side Rendering (SSR):** No
