@@ -1,14 +1,15 @@
-# 8. Proyecto final
-La empresa netec necesita crear un frontend con angular que le permita mostrar cursos a sus clientes. Pero requiere un dashboard de administradores que sólo se active si inicias sesión con alguna cuenta de usuario. 
-La empresa netec ya tiene un api de coursos que tiene los siguientes métodos: GETALL, POST, PUT, DELETE, FINDBYID
+# Práctica 8. Proyecto final
+La empresa Netec necesita crear un frontend con Angular que le permita mostrar cursos a sus clientes. Pero requiere un dashboard de administradores que sólo se active si inicias sesión con alguna cuenta de usuario. 
+La empresa Netec ya tiene un API de cursos que cuentan con los siguientes métodos: GETALL, POST, PUT, DELETE, FINDBYID.
 
+## Objetivos de la práctica:
+- Desplegar API Spring Boot.
+- Crear una aplicación de Angular.
+- Desplegar la aplicación usando **Docker**.
+- Válidar el funcionamiento de la aplicación.
 
-
-## Objetivos
-- Desplegar API Spring Boot
-- Crear aplicación de Angular 
-- Desplegar aplicación usando **Docker**
-- Válidar funcionamiento de la aplicación
+## Duración aproximada:
+- 240 minutos.
 
 ---
 
@@ -44,7 +45,7 @@ La empresa netec ya tiene un api de coursos que tiene los siguientes métodos: G
 
 Los requerimientos son los siguientes: 
 
-- Se necesita que el alumno despliegue el API de Spring Boot que usaremos en el curso usando el siguiente **docker-compose.yaml**
+- Se necesita que el alumno despliegue el API de Spring Boot que usaremos en el curso usando el siguiente **docker-compose.yaml**.
 
 ```yaml
 services:
@@ -179,7 +180,7 @@ Elimina un curso existente por su ID.
 
 - Puede usar angular material o bootstrap para crear el diseño. 
 
-- Al terminar se debe de desplegar la aplicación en **Docker** debe crear la imagen y en el mismo **docker-compose.yaml** donde se desplega el api, agregar el despliegue de la aplicación de **angular**. 
+- Al terminar se debe de desplegar la aplicación en **Docker** debe crear la imagen y en el mismo **docker-compose.yaml** donde se desplega el api, agregar el despliegue de la aplicación de **Angular**. 
 
 
 
