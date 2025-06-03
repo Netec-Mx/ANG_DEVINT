@@ -1,11 +1,3 @@
-<div>
-<table>
-  <tbody>
-      <tr>
-    <td> 
-        <img src="./images/neteclogo.png" width="250px">
-    <td>
-    <td>
       <h1>Angular Developer<h1>
     </td>
   </tr>
