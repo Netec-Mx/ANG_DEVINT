@@ -3,10 +3,10 @@
 Usando la tecnología de contenedores desplegaremos nuestra aplicación de Angular.
 
 ## Objetivos de la práctica:
-- Modificar código de angular para contenedores
-- Configurar **Dockerfile** para la creación de la imagén de angular
+- Modificar código de angular para contenedores.
+- Configurar **Dockerfile** para la creación de la imagén de Angular.
 - Crear configuración de **NGINX**  para enrutar la aplicación de Angular. 
-- Desplegar aplicación usando **Docker Compose**
+- Desplegar aplicación usando **Docker Compose**.
 
 ## Duración aproximada:
 - 90 minutos.
