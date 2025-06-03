@@ -52,11 +52,11 @@ ng new taskmanager
 
 ![alt text](../images/1/1.png)
 
-3. Abre el proyecto en **Visual Studio Code.**
+ 3. Abre el proyecto en **Visual Studio Code.**
 
 ![alt text](../images/1/2.png)
 
-4. Abre en **VSCode** una terminal y crea 2 componentes con los siguientes comandos:
+ 4. Abre en **VSCode** una terminal y crea 2 componentes con los siguientes comandos:
 
 ```bash
 ng generate component components/form-task --skip-tests
@@ -68,12 +68,12 @@ ng generate component components/table-task --skip-tests
 
 > **NOTA:** Los comandos anteriores crearán 2 componentes. 
 
-5. Crea un servicio con el siguiente comando: 
+ 5. Crea un servicio con el siguiente comando: 
 
 ```bash
 ng generate service services/Task --skip-tests
 ```
-6. En el archivo **index.html** agregaremos bootstrap. Puedes navegar en la siguiente ruta (https://getbootstrap.com/), en este caso en particular agregaremos bootstrap por CDN. Nuestro **index.html** quedará de la siguiente forma: 
+ 6. En el archivo **index.html** agregaremos bootstrap. Puedes navegar en la siguiente ruta (https://getbootstrap.com/), en este caso en particular agregaremos bootstrap por CDN. Nuestro **index.html** quedará de la siguiente forma: 
 
 ```html
 <!doctype html>
@@ -97,15 +97,15 @@ ng generate service services/Task --skip-tests
 </html>
 ```
 
-8. Crea una carpeta en **app**, a la cual llamaremos **entities**.
+ 8. Crea una carpeta en **app**, a la cual llamaremos **entities**.
 
 ![alt text](../images/1/3.png)
 
-9. Dentro de la carpeta **entities** crea un archivo llamado **business.ts**.  
+ 9. Dentro de la carpeta **entities** crea un archivo llamado **business.ts**.  
 
 ![alt text](../images/1/4.png)
 
-10. En el archivo **business.ts** añade el siguiente código:
+ 10. En el archivo **business.ts** añade el siguiente código:
 
 ```typescript
 export enum Priority{
