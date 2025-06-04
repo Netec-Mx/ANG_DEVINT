@@ -74,7 +74,7 @@ services:
         condition: service_healthy
 ```
 
-2. Los métodos disponibles en el API son los siguientes: 
+Los métodos disponibles en el API son los siguientes: 
 
 **Base URL:** `/course`  
 **Formato:** JSON  
@@ -172,15 +172,15 @@ Elimina un curso existente por su ID.
 ---
 
 
-4. Se requiere que el alumno proponga un diseño que permita lo siguiente: 
+Se requiere que el alumno proponga un diseño que permita lo siguiente: 
 
-- Página publica que permita observar los cursos sin la necesidad de iniciar sesión. 
+- Esta página tendrá un apartado donde se solicitará iniciar sesión, esto activará un dashboard que les permitirá, sólo a los usuarios autenticados, administrar los cursos. 
 
-- Tendrá un apartado donde le pedirá iniciar sesión y se activará un dashboard donde le permitirá sólo a los usuarios autenticados administrar los cursos. 
+- Tendrá un apartado donde le solicitará iniciar sesión y se activará un dashboard donde le permitirá sólo a los usuarios autenticados administrar los cursos. 
 
-- Puede usar angular material o bootstrap para crear el diseño. 
+- Puedes usar Angular Material o bootstrap para crear el diseño. 
 
-- Al terminar se debe de desplegar la aplicación en **Docker** debe crear la imagen y en el mismo **docker-compose.yaml** donde se desplega el api, agregar el despliegue de la aplicación de **Angular**. 
+- Al terminar, se debe de desplegar la aplicación en **Docker**: Debes crear la imagen y en el mismo **docker-compose.yaml**, donde se publica el API, agregar el despliegue de la aplicación de **Angular**.
 
 
 
