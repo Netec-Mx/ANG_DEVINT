@@ -46,7 +46,7 @@ Esta práctica se encuentra dividida en las siguientes secciones:
 - **[Docker Compose Api Dogs]()**
 - **[Aplicación en Angular]()**
 
-## Docker compose API Dogs [return](#instrucciones)
+## Tarea 1. Docker compose API Dogs [return](#instrucciones).
 
 > **IMPORTANTE:** Para implementar esta sección se debe de tener instalado **Docker** en tu computadora.
 
@@ -118,7 +118,7 @@ curl --request GET \
 ```
 
 
-## Aplicación en Angular [return](#instrucciones)
+## Tarea 2. Aplicación en Angular [return](#instrucciones).
 
 Paso 1. Abre una terminal en el escritorio y ejecuta el siguiente comando:
 
