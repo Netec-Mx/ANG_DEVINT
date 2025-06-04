@@ -5,7 +5,7 @@ En esta práctica se espera que el alumno pueda implementar una aplicación capa
 - Desplegar API RESTful usando docker-compose.
 - Crear una aplicación en Angular.
 - Conectarse y renderizar los productos en un componente.
-- Usar **ngrx** para manejar el estado del carrito de compras.
+- Usar **NgRx** para manejar el estado del carrito de compras.
 
 
 ---
