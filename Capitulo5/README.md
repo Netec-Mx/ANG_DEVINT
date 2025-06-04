@@ -4,7 +4,7 @@ Se espera que el alumno pueda crear una aplicación de Angular que pueda protege
 ## Objetivos de la práctica:
 - Desplegar un identity provider usando **docker-compose**.
 - Crear una aplicación de Angular.
-- Proteger recursos usando Guards.
+- Proteger recursos usando guards.
 - Autenticar usuarios usando OpenId Connect con Keycloak.
 
 ## Duración aproximada:
@@ -45,17 +45,17 @@ Esta práctica se encuentra dividida en las siguientes secciones:
 
 - **[Crear y configurar aplicación de angular](#crear-y-configurar-aplicación-de-angular-return)**
 
-## Despliegue Identity Provider [return](#instrucciones)
+## Tarea 1. Despliegue Identity Provider [return](#instrucciones)
 
 > **IMPORTANTE:** Es importante tener Docker instalado para esta sección. 
 
-1. En el escritorio crea una carpeta con el nombre de **idpDeploy**.
-2. En la carpeta **idpDeploy** genera los siguientes archivos:
+Paso 1. En el escritorio crea una carpeta con el nombre de **idpDeploy**.
+Paso 2. En la carpeta **idpDeploy** genera los siguientes archivos:
 
 - **docker-compose.yaml**
 - **keycloak.conf**
 
-3. En el archivo **docker-compose.yaml** añade el siguiente contenido: 
+Paso 3. En el archivo **docker-compose.yaml** añade el siguiente contenido: 
 
 ```yaml
 services:
@@ -72,7 +72,7 @@ services:
       - ./keycloak.conf:/opt/keycloak/conf/keycloak.conf
 ```
 
-4. En el archivo **keycloak.conf** añade el siguiente contenido: 
+Paso 4. En el archivo **keycloak.conf** añade el siguiente contenido: 
 
 ```properties
 # Habilitar HTTP (modo dev)
@@ -86,7 +86,7 @@ cors-exposed-headers=Authorization,Content-Type
 cors-max-age=3600
 ```
 
-5. Abre una terminal en la carpeta **idpDeploy** y ejecuta el siguiente comando: 
+Paso 5. Abre una terminal en la carpeta **idpDeploy** y ejecuta el siguiente comando: 
 
 ```bash
 docker-compose up -d
@@ -94,7 +94,7 @@ docker-compose up -d
 
 ![alt text](../images/5/1.png)
 
-6. Valida que el idp este iniciado con el siguiente comando:
+Paso 6. Valida que el idp este iniciado con el siguiente comando:
 
 ```bash
 docker ps
@@ -104,19 +104,19 @@ docker ps
 
 
 
-## Configuración identity provider [return](#instrucciones)
+## Tarea 2. Configuración identity provider [return](#instrucciones)
 
-1. En tu explorador web abre el siguiente URL **http://localhost:8080**, te mostrará una página de login.
+Paso 1. En tu explorador web abre el siguiente URL **http://localhost:8080**, te mostrará una página de login.
 
 ![alt text](../images/5/3.png)
 
-2. El usuario y password son los siguientes: 
+Paso 2. El usuario y password son los siguientes: 
  - **user**: admin
  - **password**: pass
 
 ![alt text](../images/5/4.png)
 
-3. Crear un cliente para que nuestra aplicación de Angular se pueda conectar:
+Paso 3. Crea un cliente para que nuestra aplicación de Angular se pueda conectar:
     - En el menú lateral de keycloak entra a **clients**.
 
         ![alt text](../images/5/5.png)
@@ -139,7 +139,7 @@ docker ps
         ![alt text](../images/5/9.png)
 
 
-4. Para la siguiente sección debemos de recordar la siguiente información: 
+Paso 4. Para la siguiente sección debemos de recordar la siguiente información: 
 
 - **URL Keycloak:** http://localhost:8080
 - **Realm name:** master
@@ -148,9 +148,9 @@ docker ps
 - **Password:** pass
     
 
-## Crear y configurar aplicación de angular [return](#instrucciones)
+## Tarea 3. Crear y configurar aplicación de Angular [return](#instrucciones)
 
-1. Abre una terminal de Windows en el escritorio y ejecuta el siguiente comando:
+Paso 1. Abre una terminal de Windows en el escritorio y ejecuta el siguiente comando:
 
 ```bash
 ng new appjwt
@@ -158,9 +158,9 @@ ng new appjwt
 - **Stylesheet:** CSS
 - **Server-Side Rendering:** No
 
-2. Abre la aplicación en **Visual Studio Code**. 
+Paso 2. Abre la aplicación en **Visual Studio Code**. 
 
-3. Abre la terminal de **VSCode** y ejecuta el siguiente comando: 
+Paso 3. Abre la terminal de **VSCode** y ejecuta el siguiente comando: 
 
 ```bash
 npm install keycloak-js
@@ -168,7 +168,7 @@ npm install keycloak-js
 
 > **NOTA:** Este comando instala la librería necesaria para usar keycloak en Angular.
 
-4. En la misma terminal crea los siguientes **componentes**: 
+Paso 4. En la misma terminal crea los siguientes **componentes**: 
 
 ```bash
 ng generate component components/home --skip-tests
@@ -178,13 +178,13 @@ ng generate component components/home --skip-tests
 ng generate component components/private --skip-tests
 ```
 
-5. Crea un **servicio** con el siguiente comando: 
+Paso 5. Crea un **servicio** con el siguiente comando: 
 
 ```bash
 ng generate service services/keycloak --skip-tests
 ```
 
-6. Crea un **guard** para proteger las rutas:
+Paso 6. Crea un **guard** para proteger las rutas:
 
 ```bash
 ng generate guard guards/auth --skip-tests 
@@ -195,7 +195,7 @@ ng generate guard guards/auth --skip-tests
 ![alt text](../images/5/10.png)
 
 
-7. Código del **servicio**  **keycloak.service.ts**:
+Paso 7. Código del **servicio**  **keycloak.service.ts**:
 
 ```typescript
 import { Injectable } from '@angular/core';
@@ -259,7 +259,7 @@ export class KeycloakService {
 }
 ```
 
-8. Ahora tenemos que ajustar el archivo principal de Angular para configurar el inicio de **keycloak**. Cuando la aplicación se inicie, modifica el archivo **main.ts**:
+Paso 8. Ahora tenemos que ajustar el archivo principal de Angular para configurar el inicio de **keycloak**. Cuando la aplicación se inicie, modifica el archivo **main.ts**:
 
 ```typescript
 import { bootstrapApplication } from '@angular/platform-browser';
@@ -282,7 +282,7 @@ import { KeycloakService } from './app/services/keycloak.service';
  });
 ```
 
-9. Configura el **guard** de nuestro proyecto **auth.guard.ts** con el siguiente código:
+Paso 9. Configura el **guard** de nuestro proyecto **auth.guard.ts** con el siguiente código:
 
 ```typescript
 import { inject } from '@angular/core';
@@ -304,7 +304,7 @@ export const authGuard: CanActivateFn = (route, state) => {
 };
 ```
 
-10. Ahora configura las rutas en el archivo **app.routes.ts**:
+Paso 10. Ahora, configura las rutas en el archivo **app.routes.ts**:
 
 ```typescript
 import { Routes } from '@angular/router';
@@ -320,7 +320,7 @@ export const routes: Routes = [
 
 > **NOTA:** En este archivo nosotros configuraremos las rutas que serán protegidas por la autenticación de keycloak, en este caso el componente **Private** estará protegido por authGuard.
 
-11. Agrega boostrap en el archivo **index.html**.
+Paso 11. Agrega boostrap en el archivo **index.html**.
 
 ```html
 <!doctype html>
@@ -344,7 +344,7 @@ export const routes: Routes = [
 </html>
 ```
 
-12. Modifica el componente **app.component**.
+Paso 12. Modifica el componente **app.component**.
 
 **app.component.ts**
 ```typescript
@@ -404,7 +404,7 @@ export class AppComponent {
 ```
 
 
-13. Modifica el component **home.component**.
+Paso 13. Modifica el component **home.component**.
 
 **home.component.ts**
 ```typescript
@@ -476,7 +476,7 @@ export class HomeComponent {
 
 ```
 
-14. Modifica el componente **private.component**.
+Paso 14. Modifica el componente **private.component**.
 
 **private.component.ts**
 ```typescript
@@ -587,7 +587,7 @@ export class PrivateComponent {
 
 ```
 
-15. Guardamos todo y ejecutamos el siguiente comando: 
+Paso 15. Guardamos todo y ejecutamos el siguiente comando: 
 
 ```bash
 ng serve
