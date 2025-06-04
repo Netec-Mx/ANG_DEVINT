@@ -48,11 +48,11 @@ Esta práctica se encuentra dividida en las siguientes secciones:
 
 > **IMPORTANTE:** Para realizar correctamente esta sección es importante que se tenga instalado **Docker**.
 
-1. En el escritorio crea una carpeta con el nombre de **deployItem**.
+Paso 1. En el escritorio crea una carpeta con el nombre de **deployItem**.
 
-2. En la carpeta **deployItem** genera un archivo al que llamaremos **docker-compose.yaml**. 
+Paso 2. En la carpeta **deployItem** genera un archivo al que llamaremos **docker-compose.yaml**. 
 
-3. En el archivo **docker-compose.yaml** añade el siguiente contenido: 
+Paso 3. En el archivo **docker-compose.yaml** añade el siguiente contenido: 
 
 ```yaml
 services:
@@ -81,7 +81,7 @@ services:
         condition: service_healthy
 ```
 
-4. Abre una terminal dentro de la carpeta **deployItem** y ejecuta el siguiente comando: 
+Paso 4. Abre una terminal dentro de la carpeta **deployItem** y ejecuta el siguiente comando: 
 
 ```bash
 docker-compose up -d
@@ -91,7 +91,7 @@ docker-compose up -d
 
 ![alt text](../images/3/1.png)
 
-5. Prueba el **API** usando **POSTMAN / INSONMIA**, usa el siguiente request:
+Paso 5. Prueba el **API** utilizando **POSTMAN / INSONMIA**, usa el siguiente request:
 
 - **GET** (obtiene todos los productos):
 
@@ -107,8 +107,9 @@ curl --request GET \
 
 ## Crear Angular App [return](#instrucciones)
 
-1. Abre una nueva terminal en el escritorio. 
-2. Ejecuta el siguiente comando estando en el escritorio:
+Paso 1. Abre una nueva terminal en el escritorio. 
+
+Paso 2. Ejecuta el siguiente comando estando en el escritorio:
 
 ```bash
 ng new shop
@@ -117,18 +118,18 @@ ng new shop
 - **Stylesheet:** CSS
 - **Server-Side Rendering:** SSR
 
-3. Abre el proyecto en **Visual Studio Code**.
+Paso 3. Abre el proyecto en **Visual Studio Code**.
 
-4. Abre la terminal de **Visual Studio Code** e instala **NGRX** usando el siguiente comando (*usaremos la versión 19 porque usamos angular 19*): 
+Paso 4. Abre la terminal de **Visual Studio Code** e instala **NgRx** usando el siguiente comando (*usaremos la versión 19 porque usamos angular 19*): 
 
 ```bash
 ng add @ngrx/store@19.2.0
 ```
 > **NOTA:** Al ejecutar el comando anterior se agrega automaticamente el provider en el archivo **app.config.ts**  (aunque más adelante tendremos que agregar el reducer).
 
-5. Crea una carpeta en **app** con el nombre de **entities**.
+Paso 5. Crea una carpeta en **app** con el nombre de **entities**.
 
-6. En la carpeta **entities** genera un archivo con el nombre de **business.ts** y añade el siguiente contenido: 
+Paso 6. En la carpeta **entities** genera un archivo con el nombre de **business.ts** y añade el siguiente contenido: 
 
 ```typescript
 export interface Item{
@@ -140,12 +141,12 @@ export interface Item{
 }
 ```
 
-7. Crea un **servicio** con el siguiente comando: 
+Paso 7. Crea un **servicio** con el siguiente comando: 
 
 ```bash
 ng generate service services/item --skip-tests 
 ```
-8. Añade el siguiente código al servicio:
+Paso 8. Añade el siguiente código al servicio:
 
 ```typescript
 import { HttpClient } from '@angular/common/http';
@@ -177,9 +178,9 @@ export class ItemService {
 ![alt text](../images/3/3.png)
 
 
-8. Crea una carpeta en **app** con el nombre de **store**, donde implementaremos el manejo de estado del carrito de compras.
+Paso 9. Crea una carpeta en **app** con el nombre de **store**, donde implementaremos el manejo de estado del carrito de compras.
 
-9. Dentro de la carpeta **store** crea los siguientes archivos:
+Paso 10. Dentro de la carpeta **store** crea los siguientes archivos:
 
 - **cart.state.ts**
 - **cart.actions.ts**
@@ -188,7 +189,7 @@ export class ItemService {
 
 ![alt text](../images/3/4.png)
 
-10. En el archivo **cart.state.ts** añade el siguiente código: 
+Paso 11. En el archivo **cart.state.ts** añade el siguiente código: 
 
 ```typescript
 import { Item } from "../entities/business";
@@ -211,7 +212,7 @@ export const initialCartState: CartState={
 };
 ```
 
-11. En el archivo **cart.actions.ts** añade el siguiente código: 
+Paso 12. En el archivo **cart.actions.ts** añade el siguiente código: 
 
 ```typescript
 import { createAction, props } from "@ngrx/store";
@@ -233,7 +234,7 @@ export const removeFromCart = createAction(
 export const clearCart=createAction('[cart] Clear cart')
 ```
 
-12. En el archivo **cart.reducer.ts** añade el siguiente código: 
+Paso 13. En el archivo **cart.reducer.ts** añade el siguiente código: 
 
 ```typescript
 import {  createReducer, on } from "@ngrx/store";
@@ -280,7 +281,7 @@ export const cartReducer = createReducer(
 );
 ```
 
-13. En el archivo **cart.selectors.ts** añade el siguiente código: 
+Paso 14. En el archivo **cart.selectors.ts** añade el siguiente código: 
 
 ```typescript
 import { createFeatureSelector, createSelector } from "@ngrx/store";
@@ -311,9 +312,7 @@ export const totalItems = createSelector(
 ![alt text](../images/3/5.png)
 
 
-
-
-14. Genera 3 componentes con los siguientes comandos:
+Paso 15. Genera 3 componentes con los siguientes comandos:
 
 ```bash
 ng generate component components/home --skip-tests
@@ -328,7 +327,7 @@ ng generate component components/shoppingcart --skip-tests
 ```
 
 
-15. En el **index.html** añadiremos bootstrap (Usar la versión CDN):
+Paso 16. En el **index.html** añadiremos bootstrap (Usa la versión CDN):
 
 ```bash
 <!doctype html>
@@ -351,7 +350,7 @@ ng generate component components/shoppingcart --skip-tests
 </html>
 ```
 
-16. Añadir las rutas de los componentes en el archivo **app.routes.ts**.
+Paso 17. Añade las rutas de los componentes en el archivo **app.routes.ts**.
 
 ```typescript
 import { Routes } from '@angular/router';
@@ -368,7 +367,7 @@ export const routes: Routes = [
 ```
 
 
-17. Modifica el componente principal **app.component.ts**.
+Paso 18. Modifica el componente principal **app.component.ts**.
 
 ```typescript
 import { Component } from '@angular/core';
@@ -385,7 +384,7 @@ export class AppComponent {
 }
 ```
 
-18. Modifica el **html**  del componente principal **app.component.html**.
+Paso 19. Modifica el **html**  del componente principal **app.component.html**.
 
 ```html
 <nav class="navbar bg-primary">
@@ -406,7 +405,7 @@ export class AppComponent {
 </div>
 ```
 
-19. Modifica el componente **home** typescript **home.component.ts**.
+Paso 20. Modifica el componente **home** typescript **home.component.ts**.
 
 ```typescript
 import { Component, signal } from '@angular/core';
@@ -441,7 +440,7 @@ export class HomeComponent {
 
 ```
 
-20. Modifica el **html** del componente **home**, **home.component.html**:
+Paso 21. Modifica el **html** del componente **home**, **home.component.html**:
 
 ```html
 
@@ -460,7 +459,7 @@ export class HomeComponent {
 </div>
 ```
 
-21. Modifica el **CSS** del componente **home**, **home.component.css**:
+Paso 22. Modifica el **CSS** del componente **home**, **home.component.css**:
 
 ```css
 .slider {
@@ -481,7 +480,7 @@ export class HomeComponent {
 }
 ```
 
-22. Modifica el **typescript** del componente **products.component.ts**:
+Paso 23. Modifica el **typescript** del componente **products.component.ts**:
 
 ```typescript
 import { Component, inject, signal } from '@angular/core';
@@ -525,7 +524,7 @@ export class ProductsComponent {
 }
 ```
 
-23. Modifica el **html** del componente **products.component.html**:
+Paso 24. Modifica el **html** del componente **products.component.html**:
 
 ```html
 <div class="p-5 mb-4 rounded-3" style="background-color: rgb(218, 213, 213);">
@@ -556,7 +555,7 @@ export class ProductsComponent {
 </div>
 ```
 
-24. Modifica el **CSS** del componente **products.component.css**:
+Paso 25. Modifica el **CSS** del componente **products.component.css**:
 
 ```css
 .product-card {
@@ -576,7 +575,7 @@ export class ProductsComponent {
 
 ```
 
-25. Modifica el **typescript** del componente **shoppingcart.component.ts**:
+Paso 26. Modifica el **typescript** del componente **shoppingcart.component.ts**:
 
 ```typescript
 import { Component, inject, signal } from '@angular/core';
@@ -617,7 +616,7 @@ export class ShoppingcartComponent {
 }
 ```
 
-26. Modifica el **html** del componente **shoppingcart.component.html**: 
+Paso 27. Modifica el **html** del componente **shoppingcart.component.html**: 
 
 ```html
 <div class="container mt-5">
@@ -664,7 +663,7 @@ export class ShoppingcartComponent {
 </div>
 ```
 
-27. Modifica el **CSS** del componente **shoppingcart.component.css**:
+Paso 28. Modifica el **CSS** del componente **shoppingcart.component.css**:
 
 ```css
 table th, table td {
@@ -672,7 +671,7 @@ table th, table td {
 }
 ```
 
-28. Guarda todo e inicia el proyecto desde la terminal usando el comando:
+Paso 29. Guarda todo e inicia el proyecto desde la terminal usando el comando:
 
 ```bash
 ng serve
