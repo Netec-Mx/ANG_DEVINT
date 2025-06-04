@@ -38,8 +38,8 @@ Al final de la práctica se espera que el alumno pueda observar la ejecución de
 ![alt text](../images/6/diagrama.png)
 
 ## Instrucciones
-1. Abre una terminal en el escritorio.
-2. Ejecuta el siguiente comando para la creación de un nuevo proyecto en Angular:
+Paso 1. Abre una terminal en el escritorio.
+Paso 2. Ejecuta el siguiente comando para la creación de un nuevo proyecto en Angular:
 
 ```bash
 ng new apptesting
@@ -48,15 +48,15 @@ ng new apptesting
 - **Stylesheet:** CSS
 - **Server Side Rendering:** No
 
-3. Abre el  proyecto en **Visual Studio Code**. 
+Paso 3. Abre el  proyecto en **Visual Studio Code**. 
 
-4. Abre una terminal en **Visual Studio Code** y crea un nuevo componente con el siguiente comando:
+Paso 4. Abre una terminal en **Visual Studio Code** y crea un nuevo componente con el siguiente comando:
 
 ```bash
 ng generate component components/robust-form
 ```
 
-5. Modifica las **rutas** de Angular:
+Paso 5. Modifica las **rutas** de Angular:
 
 ```typescript
 import { Routes } from '@angular/router';
@@ -67,7 +67,7 @@ export const routes: Routes = [
 ];
 ```
 
-6. Modifica el código del componente principal:
+Paso 6. Modifica el código del componente principal:
 
 **app.component.ts**
 ```typescript
@@ -96,7 +96,7 @@ export class AppComponent {
 <router-outlet></router-outlet>
 ```
 
-7. Modifica el código del componente **robust-form**:
+Paso 7. Modifica el código del componente **robust-form**:
 
 **robust-form.component.ts**
 ```typescript
@@ -253,23 +253,23 @@ describe('RobustFormComponent', () => {
 
 ```
 
-8. Ejecuta el proyecto con el siguiente comando: 
+Paso 8. Ejecuta el proyecto con el siguiente comando: 
 
 ```bash
 ng serve
 ```
 
-9. Deberíamos de observar la siguiente aplicación:
+Paso 9. Debes observar la siguiente aplicación:
 
 ![alt text](../images/6/1.png)
 
-10. Prueba las validaciones:
+Paso 10. Prueba las validaciones:
 
 ![alt text](../images/6/2.png)
 
-11. Deten la aplicación **(cerrar terminal donde se ejecuta la aplicación)**.
+Paso 11. Deten la aplicación **(cerrar terminal donde se ejecuta la aplicación)**.
 
-12. Ejecuta las pruebas con el siguiente comando:
+Paso 12. Ejecuta las pruebas con el siguiente comando:
 
 ```bash
 ng test
