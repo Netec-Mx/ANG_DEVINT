@@ -195,7 +195,7 @@ export class DogService {
 }
 ```
 
-Paso 7.1 **NO OLVIDES agregar el HttpProvider** en el archivo **app.config.ts**: 
+Paso 7.1. **NO OLVIDES agregar el HttpProvider** en el archivo **app.config.ts**: 
 
 ```typescript
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
@@ -221,7 +221,7 @@ Paso 8. Utilizando la terminal, añade **Angular Material** usando el siguiente 
 ```bash
 ng add @angular/material@19.2.16
 ```
-Le realizará las siguientes preguntas:
+Se te realizaran las siguientes preguntas:
 
 - **Confirmación de instalación:** Yes.
 - **Tema a utilizar:** Cyan/Orange (aunque puedes elegir el que más te guste).
