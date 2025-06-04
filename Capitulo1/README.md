@@ -9,6 +9,8 @@ En esta práctica se espera que el alumno pueda implementar una aplicación de "
 - Crear servicios.
 - Iniciar proyecto de Angular.
 
+## Duración aproximada:
+- 45 minutos.
 ---
 <!--Este fragmento es la barra de 
 navegación-->
