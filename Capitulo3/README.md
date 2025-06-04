@@ -44,7 +44,7 @@ Esta práctica se encuentra dividida en las siguientes secciones:
 - **[Despliegue API Spring](#despliegue-api-spring-return)**
 - **[Crear Angular App](#crear-angular-app-return)**
 
-## Despliegue API Spring [return](#instrucciones)
+## Tarea 1. Despliegue API Spring [return](#instrucciones)
 
 > **IMPORTANTE:** Para realizar correctamente esta sección es importante que se tenga instalado **Docker**.
 
@@ -103,9 +103,7 @@ curl --request GET \
 ![alt text](../images/3/2.png)
 
 
-
-
-## Crear Angular App [return](#instrucciones)
+## Tarea 2. Crear Angular App [return](#instrucciones)
 
 Paso 1. Abre una nueva terminal en el escritorio. 
 
@@ -120,7 +118,7 @@ ng new shop
 
 Paso 3. Abre el proyecto en **Visual Studio Code**.
 
-Paso 4. Abre la terminal de **Visual Studio Code** e instala **NgRx** usando el siguiente comando (*usaremos la versión 19 porque usamos angular 19*): 
+Paso 4. Abre la terminal de **Visual Studio Code** e instala **NgRx** usando el siguiente comando (*usaremos la versión 19 porque usamos Angular 19*): 
 
 ```bash
 ng add @ngrx/store@19.2.0
@@ -189,7 +187,7 @@ Paso 10. Dentro de la carpeta **store** crea los siguientes archivos:
 
 ![alt text](../images/3/4.png)
 
-Paso 11. En el archivo **cart.state.ts** añade el siguiente código: 
+Paso 11. Primero, añade el siguiente código en el archivo **cart.state.ts**:
 
 ```typescript
 import { Item } from "../entities/business";
@@ -212,7 +210,7 @@ export const initialCartState: CartState={
 };
 ```
 
-Paso 12. En el archivo **cart.actions.ts** añade el siguiente código: 
+Paso 12. Añade el siguiente código en el archivo **cart.actions.ts**: 
 
 ```typescript
 import { createAction, props } from "@ngrx/store";
@@ -234,7 +232,7 @@ export const removeFromCart = createAction(
 export const clearCart=createAction('[cart] Clear cart')
 ```
 
-Paso 13. En el archivo **cart.reducer.ts** añade el siguiente código: 
+Paso 13. Ahora, añade el siguiente código en el archivo **cart.reducer.ts**: 
 
 ```typescript
 import {  createReducer, on } from "@ngrx/store";
@@ -281,7 +279,7 @@ export const cartReducer = createReducer(
 );
 ```
 
-Paso 14. En el archivo **cart.selectors.ts** añade el siguiente código: 
+Paso 14. Finalmente, añade el siguiente código en el archivo **cart.selectors.ts**: 
 
 ```typescript
 import { createFeatureSelector, createSelector } from "@ngrx/store";
@@ -350,7 +348,7 @@ Paso 16. En el **index.html** añadiremos bootstrap (Usa la versión CDN):
 </html>
 ```
 
-Paso 17. Añade las rutas de los componentes en el archivo **app.routes.ts**.
+Paso 17. Primero, añade las rutas de los componentes en el archivo **app.routes.ts**.
 
 ```typescript
 import { Routes } from '@angular/router';
@@ -366,8 +364,7 @@ export const routes: Routes = [
 
 ```
 
-
-Paso 18. Modifica el componente principal **app.component.ts**.
+Paso 18. Después, modifica el componente principal **app.component.ts**.
 
 ```typescript
 import { Component } from '@angular/core';
@@ -384,7 +381,7 @@ export class AppComponent {
 }
 ```
 
-Paso 19. Modifica el **html**  del componente principal **app.component.html**.
+Paso 19. También modifica el **html**  del componente principal **app.component.html**.
 
 ```html
 <nav class="navbar bg-primary">
@@ -459,7 +456,7 @@ Paso 21. Modifica el **html** del componente **home**, **home.component.html**:
 </div>
 ```
 
-Paso 22. Modifica el **CSS** del componente **home**, **home.component.css**:
+Paso 22. Ahora, modifica el **CSS** del componente **home**, **home.component.css**:
 
 ```css
 .slider {
